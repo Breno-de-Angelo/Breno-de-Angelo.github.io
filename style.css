@@ -180,6 +180,13 @@ h4 { font-weight: 600; font-size: 1rem; margin: 4px 0 6px; }
 }
 .repo:hover { border-color: var(--accent); text-decoration: none; transform: translateY(-2px); }
 .repo p { color: var(--ink-2); font-size: .9rem; margin: 0; }
+.repo-cat {
+  font-family: var(--mono); font-weight: 500; font-size: .8rem; letter-spacing: .06em;
+  text-transform: uppercase; color: var(--muted); margin: 32px 0 12px;
+}
+.section-intro + .repo-cat { margin-top: 0; }
+.repo.featured { grid-column: span 2; border-color: color-mix(in srgb, var(--accent) 45%, var(--line)); }
+@media (max-width: 600px) { .repo.featured { grid-column: auto; } }
 
 /* about */
 .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; }

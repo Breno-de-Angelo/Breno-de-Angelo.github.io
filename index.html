@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=3">
+  <link rel="stylesheet" href="style.css?v=4">
 </head>
 <body>
 
@@ -211,38 +211,53 @@
   <!-- ===================== PROJECTS ===================== -->
   <section id="projects" class="section wrap">
     <h2 class="section-title"><span>04</span> Side projects &amp; coursework</h2>
-    <p class="section-intro">A selection from <a href="https://github.com/Breno-de-Angelo">GitHub</a>, mostly course projects that went further than they had to.</p>
+    <p class="section-intro">A selection from <a href="https://github.com/Breno-de-Angelo">GitHub</a>: personal projects, and course projects that went further than they had to.</p>
+    <h3 class="repo-cat">Audio &amp; embedded</h3>
     <div class="repo-grid">
-      <a class="repo" href="https://github.com/Breno-de-Angelo/robos_autonomos_t1">
-        <span class="repo-lang">Python · ROS 2 · Nav2 · YOLO</span>
-        <h4>Autonomous explorer</h4>
-        <p>A simulated TurtleBot3 with 3D lidar explores an unknown world, choosing its next goals from the Nav2 costmap, and locates objects by combining a fine-tuned YOLO detector with lidar, estimating each object's width.</p>
-      </a>
-      <a class="repo" href="https://github.com/Breno-de-Angelo/robotica_movel">
-        <span class="repo-lang">Python · ROS · Control</span>
-        <h4>Quadrotor flight control</h4>
-        <p>Inner/outer-loop (kinematic + dynamic) controller for a Parrot Bebop 2, tuned in simulation and then flown on the real drone for positioning, trajectory tracking and path following.</p>
-      </a>
-      <a class="repo" href="https://github.com/Breno-de-Angelo/person_tracker">
-        <span class="repo-lang">Python · YOLOv8 · MQTT</span>
-        <h4>Occupancy-based power switching</h4>
-        <p>One hallway camera tracks people with YOLOv8 and counts them in and out of each door marked on the frame; over MQTT, each room's power is switched on when someone is inside and off when it empties.</p>
-      </a>
-      <a class="repo" href="https://github.com/Breno-de-Angelo/robos_autonomos_t2">
-        <span class="repo-lang">Python · ROS 2 · Nav2</span>
-        <h4>Person-following robot</h4>
-        <p>A simulated robot explores until it detects a person, then stops exploring and navigates to them with Nav2.</p>
-      </a>
-      <a class="repo" href="https://github.com/Breno-de-Angelo/lesion-classifier-generalization">
-        <span class="repo-lang">Python · PyTorch</span>
-        <h4>Skin-lesion classifier generalization</h4>
-        <p>Trains EfficientNet on PAD-UFES-20 and on ISIC 2019+2020, then tests each on the other dataset to measure how well it transfers (balanced accuracy, ROC curves, W&amp;B tracking).</p>
+      <a class="repo featured" href="https://github.com/Breno-de-Angelo/guitar_virtual_amp">
+        <span class="repo-lang">Rust · DSP · egui · Android</span>
+        <h4>Virtual guitar amp</h4>
+        <p>A real-time guitar effects processor: the signal runs through a configurable chain of 17 DSP pedals (distortion, compressor, wah, chorus, phaser, pitch shifter, looper…) and an impulse-response cabinet simulator, with 20 factory presets, a YIN-based tuner, a metronome and a live oscilloscope/FFT view. Runs on desktop and Android.</p>
       </a>
       <a class="repo" href="https://github.com/Breno-de-Angelo/embedded-drum-synth">
         <span class="repo-lang">C · EFM32 bare metal</span>
         <h4>Embedded drum machine</h4>
         <p>Drum machine on an EFM32 Giant Gecko with hand-written drivers: WAV samples converted to C arrays, three-voice mixing, BPM control, and audio out via DAC, PWM or I²S.</p>
       </a>
+    </div>
+    <h3 class="repo-cat">Robotics</h3>
+    <div class="repo-grid">
+      <a class="repo" href="https://github.com/Breno-de-Angelo/robos_autonomos_t1">
+        <span class="repo-lang">Python · ROS 2 · Nav2 · YOLO</span>
+        <h4>Autonomous explorer</h4>
+        <p>A simulated TurtleBot3 with 3D lidar explores an unknown world, choosing its next goals from the Nav2 costmap, and locates objects by combining a fine-tuned YOLO detector with lidar, estimating each object's width.</p>
+      </a>
+      <a class="repo" href="https://github.com/Breno-de-Angelo/robos_autonomos_t2">
+        <span class="repo-lang">Python · ROS 2 · Nav2</span>
+        <h4>Person-following robot</h4>
+        <p>A simulated robot explores until it detects a person, then stops exploring and navigates to them with Nav2.</p>
+      </a>
+      <a class="repo" href="https://github.com/Breno-de-Angelo/robotica_movel">
+        <span class="repo-lang">Python · ROS · Control</span>
+        <h4>Quadrotor flight control</h4>
+        <p>Inner/outer-loop (kinematic + dynamic) controller for a Parrot Bebop 2, tuned in simulation and then flown on the real drone for positioning, trajectory tracking and path following.</p>
+      </a>
+    </div>
+    <h3 class="repo-cat">Computer vision &amp; ML</h3>
+    <div class="repo-grid">
+      <a class="repo" href="https://github.com/Breno-de-Angelo/person_tracker">
+        <span class="repo-lang">Python · YOLOv8 · MQTT</span>
+        <h4>Occupancy-based power switching</h4>
+        <p>One hallway camera tracks people with YOLOv8 and counts them in and out of each door marked on the frame; over MQTT, each room's power is switched on when someone is inside and off when it empties.</p>
+      </a>
+      <a class="repo" href="https://github.com/Breno-de-Angelo/lesion-classifier-generalization">
+        <span class="repo-lang">Python · PyTorch</span>
+        <h4>Skin-lesion classifier generalization</h4>
+        <p>Trains EfficientNet on PAD-UFES-20 and on ISIC 2019+2020, then tests each on the other dataset to measure how well it transfers (balanced accuracy, ROC curves, W&amp;B tracking).</p>
+      </a>
+    </div>
+    <h3 class="repo-cat">Algorithms</h3>
+    <div class="repo-grid">
       <a class="repo" href="https://github.com/Breno-de-Angelo/graph-theory">
         <span class="repo-lang">Python · Algorithms</span>
         <h4>Graph algorithms &amp; scalability</h4>
