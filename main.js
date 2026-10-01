@@ -176,3 +176,51 @@ document.querySelector(".theme-toggle").addEventListener("click", () => {
   root.dataset.theme = dark ? "light" : "dark";
   try { localStorage.setItem("theme", root.dataset.theme); } catch {}
 });
+
+// Side projects: turn the category headings into a topic selector that
+// shows one group at a time. Without JS, all groups stay visible.
+(function topicTabs() {
+  const section = document.getElementById("projects");
+  const heads = [...section.querySelectorAll(".repo-cat")];
+  if (heads.length < 2) return;
+  const bar = document.createElement("div");
+  bar.className = "topic-tabs";
+  bar.setAttribute("role", "tablist");
+  bar.setAttribute("aria-label", "Project topics");
+  heads[0].before(bar);
+
+  const tabs = heads.map((h, i) => {
+    const panel = h.nextElementSibling;
+    const id = `topic-${i}`;
+    panel.id = id;
+    panel.setAttribute("role", "tabpanel");
+    const tab = document.createElement("button");
+    tab.type = "button";
+    tab.className = "topic-tab";
+    tab.setAttribute("role", "tab");
+    tab.setAttribute("aria-controls", id);
+    const n = panel.querySelectorAll(".repo").length;
+    tab.innerHTML = `${h.innerHTML}<span class="topic-count">${n}</span>`;
+    panel.setAttribute("aria-label", h.textContent);
+    h.hidden = true;
+    bar.appendChild(tab);
+    return { tab, panel };
+  });
+
+  const select = i => tabs.forEach((t, j) => {
+    const on = i === j;
+    t.tab.setAttribute("aria-selected", on);
+    t.tab.tabIndex = on ? 0 : -1;
+    t.panel.hidden = !on;
+  });
+  tabs.forEach((t, i) => t.tab.addEventListener("click", () => select(i)));
+  bar.addEventListener("keydown", e => {
+    const step = { ArrowRight: 1, ArrowLeft: -1 }[e.key];
+    if (!step) return;
+    const cur = tabs.findIndex(t => t.tab.getAttribute("aria-selected") === "true");
+    const next = (cur + step + tabs.length) % tabs.length;
+    select(next);
+    tabs[next].tab.focus();
+  });
+  select(0);
+})();

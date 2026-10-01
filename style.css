@@ -257,3 +257,19 @@ h4 { font-weight: 600; font-size: 1rem; margin: 4px 0 6px; }
   height: 100%; background: var(--accent); transform: scaleX(0); transform-origin: left;
 }
 .yt-play { bottom: 18px; }
+
+/* side-project topic selector */
+.topic-tabs { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 20px; }
+.topic-tab {
+  display: inline-flex; align-items: center; gap: 8px; cursor: pointer;
+  padding: 7px 14px; border-radius: 999px; font: 500 .88rem var(--sans);
+  color: var(--ink-2); background: var(--surface); border: 1px solid var(--line);
+  transition: border-color .15s, color .15s, background .15s;
+}
+.topic-tab:hover { border-color: var(--accent); color: var(--accent); }
+.topic-tab[aria-selected="true"] { background: var(--accent); border-color: var(--accent); color: var(--bg); }
+.topic-count {
+  font: 500 .72rem var(--mono); padding: 1px 7px; border-radius: 999px;
+  background: color-mix(in srgb, currentColor 14%, transparent);
+}
+.repo-grid[hidden] { display: none; }
