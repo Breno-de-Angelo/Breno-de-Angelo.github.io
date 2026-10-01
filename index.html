@@ -4,11 +4,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Breno Uliana de Angelo</title>
-  <meta name="description" content="Breno Uliana de Angelo: M.Sc. student at UFES working on deep learning for genomics, robot learning and LLM systems.">
+  <meta name="description" content="Breno Uliana de Angelo: M.Sc. student at UFES working on neural genome models that find the genes behind human traits, aimed at the genetics of human longevity.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=5">
+  <link rel="stylesheet" href="style.css?v=6">
 </head>
 <body>
 
@@ -17,10 +17,10 @@
     <a class="brand" href="#top">B. U. de Angelo</a>
     <nav>
       <a href="#research">Research</a>
-      <a href="#industry">Industry</a>
       <a href="#publications">Publications</a>
-      <a href="#projects">Projects</a>
+      <a href="#earlier">Earlier work</a>
       <a href="#about">About</a>
+      <a href="projects.html">Side projects</a>
     </nav>
     <button class="theme-toggle" type="button" aria-label="Toggle dark mode">◐</button>
   </div>
@@ -34,14 +34,17 @@
       <p class="eyebrow">M.Sc. student · UFES · Vitória, Brazil</p>
       <h1>Breno Uliana de&nbsp;Angelo</h1>
       <p class="lede">
-        I build learning systems that touch the physical and biological world:
-        neural models that read the genome, robots that learn from demonstration,
-        and LLM products that run in production.
+        I study the genetics of human longevity. For my M.Sc. I'm part of a team at LCAD developing methods that
+        use neural genome models to find which genes drive a trait. We test them first on traits where the answer is already known,
+        so that they can be trusted on longevity, where it isn't.
       </p>
       <p class="lede-sub">
-        Graduate researcher at <a href="https://github.com/i2ca">I2CA</a> / <a href="https://github.com/LCAD-UFES">LCAD</a>
-        with Prof. Alberto F. De Souza, and an employee at <a href="https://github.com/aumoai">AUMO</a> since 2023.
+        Graduate researcher at <a href="https://www.lcad.inf.ufes.br">LCAD</a>
+        with Prof. Alberto F. De Souza. Before genomics I worked on robot learning and language-model systems.
+        Alongside my M.Sc., I'm responsible for backend development and infrastructure at
+        <a href="https://aumo.ai">AUMO</a>, a startup building enterprise LLM products.
       </p>
+      <p class="seeking">I'm looking for a PhD position in the computational genomics of aging.</p>
       <ul class="links">
         <li><a href="mailto:brenodeangelo@gmail.com">Email</a></li>
         <li><a href="https://github.com/Breno-de-Angelo">GitHub</a></li>
@@ -54,145 +57,121 @@
     <figure class="slot portrait" data-media="media/profile" data-label="Portrait photo"></figure>
   </section>
 
-  <section class="stats wrap" aria-label="At a glance">
-    <div><span class="num">3</span><span class="lbl">papers, 2 oral talks</span></div>
-    <div><span class="num">3</span><span class="lbl">robots: forklift, quadruped, humanoid</span></div>
-    <div><span class="num">9.37</span><span class="lbl">B.Sc. GPA (out of 10)</span></div>
-    <div><span class="num">15</span><span class="lbl">national olympiad medals</span></div>
-  </section>
-
   <!-- ===================== RESEARCH ===================== -->
   <section id="research" class="section wrap">
     <h2 class="section-title"><span>01</span> Research</h2>
 
-    <article class="project">
-      <figure class="slot" data-media="media/genomics" data-label="Presenting the AlphaGenome paper at ICANN 2026 in Padua, title slide"></figure>
-      <div class="project-body">
-        <p class="tag">Deep learning for genomics · 2026 – present</p>
-        <h3>Reading phenotypes out of DNA with AlphaGenome</h3>
+    <div class="agenda-intro">
+      <div class="prose">
+        <h3>Which genes let some people live to a hundred?</h3>
         <p>
-          My M.Sc. asks how neural genome models can point to markers associated with human traits, with longevity as the long-term target.
-          We feed DNA through Google DeepMind's <em>AlphaGenome</em> and learn on top of its predicted functional signals.
+          People who reach very old ages tend to postpone or escape many age-related diseases, which makes them one of the most
+          informative natural experiments in human biology. Genetic studies keep finding signals near a few genes such as
+          <em>APOE</em> and <em>FOXO3</em>, but most of the heritable part of survival is still unexplained.
         </p>
-        <ul class="results">
-          <li>
-            <strong>Ancestry from 11 pigmentation genes (ICANN 2026, oral, presented by me).</strong>
-            Using predicted RNA-seq over 11 pigmentation genes for 2,237 individuals from the 1000 Genomes Project, a CNN classifies five superpopulations at
-            <b>84%</b> accuracy, versus 81% for XGBoost and 69% for Random Forest. I built both tree baselines and ran the hyperparameter search for every model.
-            A single known pigmentation gene (OCA2) reaches 64%; a random gene (FBXO5) gets 37%.
-          </li>
-          <li>
-            <strong>Gene prioritization (ongoing).</strong>
-            Using AlphaGenome to prioritize the genes associated with a phenotype of interest.
-          </li>
-          <li>
-            <strong>Virtual Embryo Challenge.</strong> Part of the LCAD team, with my advisor and lab colleagues. I helped frame the problem and design the models.
-          </li>
-        </ul>
-      </div>
-    </article>
-
-    <article class="project">
-      <figure class="slot" data-media="media/prometheus" data-label="The Unitree G1 running a learned ACT policy autonomously: it grasps a mug, lifts it and puts it back down (real time)"></figure>
-      <div class="project-body">
-        <p class="tag">Humanoid robot learning · B.Sc. thesis 2025 · ongoing</p>
-        <h3>Prometheus, teaching a Unitree G1 humanoid by VR teleoperation</h3>
         <p>
-          My undergraduate thesis evaluated whether adding depth helps an Action Chunking Transformer (ACT) policy manipulate objects with a humanoid.
+          Three things make the search hard. First, the signal is weak and the cohorts are small: lifespan is only modestly
+          heritable, and studies of long-lived people have thousands of participants, not the hundreds of thousands behind
+          studies of common diseases. Second, long-lived people and their controls are hard to match. They are often recruited
+          separately, born decades apart and sometimes drawn from different populations, so a variant can look linked to longevity
+          only because it marks ancestry or how a group was recruited. Standard statistical corrections handle this well in large,
+          well-matched studies, and less well in small ones. Third, most associated variants lie outside genes, in regulatory DNA,
+          so even a real signal rarely says which gene it acts on, or how.
         </p>
-        <ul class="results">
-          <li>Extended an open-source Meta Quest&nbsp;3 teleoperation stack with a new <em>Pinch Retargeting</em> hand-control strategy and stereoscopic feedback.</li>
-          <li>Collected pick-and-place demonstrations and curated the 30 best (rated on a 5-point scale) into a LeRobot dataset.</li>
-          <li>Trained RGB-only and depth-augmented (PointNet encoder) ACT policies.</li>
-          <li>Now supervising undergraduates who continue the project: benchmarking vision-language-action (VLA) models, collecting new data, and writing a hierarchical program for the robot to make a cup of coffee on its own.</li>
-        </ul>
-        <p class="actions">
-          <a href="papers/2025-tcc-depth-augmented-act-humanoid.pdf">Thesis (PDF)</a>
-          <a href="https://github.com/Breno-de-Angelo/refactored-prometheus">Code</a>
+        <p>
+          Our approach at LCAD is to describe each person's genome by what it is predicted to <em>do</em>, using
+          Google DeepMind's sequence-to-function model <em>AlphaGenome</em>, which reads DNA, regulatory regions included,
+          and predicts gene activity. We then rank genes by how much of a trait that predicted activity explains. The model brings in
+          what it learned from large functional-genomics datasets, which a small cohort cannot provide, and each score is tied to
+          a specific gene by construction. Before pointing this at longevity, we test it on traits where the right answer is known.
         </p>
       </div>
-    </article>
+      <figure class="slot" data-media="media/genomics" data-label="Presenting the AlphaGenome paper at ICANN 2026 in Padua"></figure>
+    </div>
 
-    <article class="project">
-      <figure class="slot tall" data-media="media/argos" data-label="Argos walking autonomously from the lab, down the corridor and out along the campus paths (sped up 12×)"></figure>
-      <div class="project-body">
-        <p class="tag">Legged robotics · Unitree Go1 · 2024 – 2025</p>
-        <h3>Argos, a quadruped for places too dangerous for people</h3>
+    <figure class="pipeline" aria-label="Method pipeline">
+      <ol>
+        <li><span class="pl-k">Input</span>Each person's own DNA sequence around a gene, one copy per haplotype</li>
+        <li><span class="pl-k">Represent</span>AlphaGenome (frozen) predicts that gene's expression in a chosen cell type</li>
+        <li><span class="pl-k">Score</span>One classifier per gene, trained on that signal alone</li>
+        <li><span class="pl-k">Rank</span>Genes ordered by how well their classifier predicts the trait</li>
+        <li class="todo"><span class="pl-k">Explain</span>In-silico perturbation of top genes: which variants matter?</li>
+      </ol>
+      <figcaption>The method. Solid steps are built and tested; dashed steps are in progress.</figcaption>
+    </figure>
+
+    <h3 class="sub roadmap-title">Roadmap</h3>
+    <ol class="roadmap">
+      <li class="done">
+        <p class="step-k">Step 1 · Representation</p>
+        <h4>Do the predicted signals carry real biology?</h4>
         <p>
-          Argos is a Unitree Go1 quadruped being prepared for industrial monitoring, so that inspections of hazardous areas
-          can be done by a robot instead of putting people at risk.
+          From AlphaGenome's predicted expression over 11 pigmentation genes, a CNN tells apart the five continental
+          superpopulations of 1000 Genomes at <b>84%</b> accuracy (XGBoost 81%). One known pigmentation gene, OCA2, alone reaches 64%;
+          a random gene reaches 37%.
         </p>
-        <ul class="results">
-          <li>Installed and tested open-source autonomy stacks on the robot.</li>
-          <li>The video shows Argos walking on its own from the lab, down the corridor and out along the campus paths.</li>
-        </ul>
-        <figure class="slot secondary" data-media="media/argos-slam" data-label="Argos building a 3D lidar map of the building with SLAM, then a fly-around of the finished map"></figure>
-        <p class="media-caption">3D lidar map of the building, built by Argos with SLAM.</p>
-      </div>
-    </article>
-
-    <article class="project">
-      <figure class="slot" data-media="media/hercules" data-youtube="1shBzEbdhWM" data-youtube-label="Watch the full mission" data-label="Hercules autonomously picks a bale from the pile and delivers it to the truck (sped up)"></figure>
-      <div class="project-body">
-        <p class="tag">Mobile manipulation · LLMs · 2022 – 2025</p>
-        <h3>Hercules, an autonomous forklift you talk to</h3>
+        <p class="step-ref">ICANN 2026 · oral, presented by me</p>
+      </li>
+      <li class="done">
+        <p class="step-k">Step 2 · Discovery under confounding</p>
+        <h4>Can it find the right genes when ancestry and trait coincide?</h4>
         <p>
-          A team effort at LCAD: an Ackermann robot with a manipulator arm that moves cellulose bales from a pile onto a truck in a scaled warehouse,
-          taking orders spoken in natural language and interpreted by an LLM.
+          A deliberately extreme test: skin pigmentation in a cohort where it matches ancestry exactly, so no correction
+          can separate the two and association tests cannot tell causal genes from ancestry markers. Ranking 9 known pigmentation genes against 33 controls, our method reaches
+          AUC <b>0.880</b> versus 0.724 for a variant-level association test. Among the top 5 genes, ours ranks 4 known pigmentation genes; the association test ranks 2.
         </p>
-        <ul class="results">
-          <li>Programmed the arm motion and designed the low-level control system, then integrated it into the autonomy stack.</li>
-          <li>Designed the bale-recognition system: YOLOv8 fine-tuned on 859 images plus 3D localization from a depth camera, in ROS&nbsp;2.</li>
-          <li>Contributed to the chat-based command interface. In our benchmark GPT-4 approved <b>100%</b> of feasible tasks and rejected 83.3% of unfeasible ones; the best open model (Mixtral) managed 53.3% and 23.3%.</li>
-          <li>First-author paper in <em>JISEM</em> (2025).</li>
-        </ul>
-        <p class="actions">
-          <a href="https://jisem-journal.com/index.php/journal/article/view/4610">Paper</a>
-          <a href="papers/2025-jisem-hercules-forklift.pdf">PDF</a>
-          <a href="https://www.youtube.com/watch?v=1shBzEbdhWM">Video</a>
-        </p>
-      </div>
-    </article>
-  </section>
-
-  <!-- ===================== INDUSTRY ===================== -->
-  <section id="industry" class="section wrap">
-    <h2 class="section-title"><span>02</span> Industry</h2>
-
-    <article class="project">
-      <figure class="slot" data-media="media/aumo" data-label="Presenting the message routing paper at SBSI 2026"></figure>
-      <div class="project-body">
-        <p class="tag">AUMO S.A. · Employee · 2023 – present</p>
-        <h3>Backend, DevOps and project management for enterprise LLM products</h3>
+        <p class="step-ref">Manuscript under review · first author</p>
+      </li>
+      <li class="now">
+        <p class="step-k">Step 3 · Mechanism</p>
+        <h4>Which variants inside a top-ranked gene matter?</h4>
         <p>
-          AUMO is a startup born in the UFES incubator. It sells SaaS and on-premise chatbots grounded in company knowledge through retrieval-augmented generation,
-          with connectors to Google Drive, OneDrive, Jira and others, Model Context Protocol (MCP) integrations, and custom small language models trained per contract.
-          There I'm responsible for the Python backend, the infrastructure (DevOps) and project management.
+          Using AlphaGenome to mutate sequences in silico and see which changes move the predicted expression,
+          turning a ranked gene into a testable hypothesis.
         </p>
-        <ul class="results">
-          <li>
-            <strong>Semantic routing (SBSI 2026, oral, first author).</strong> I led the research on a layer that sorts incoming chat messages
-            into relevant, unrelated, chitchat or spam before anything reaches the LLM. On a balanced set of 6,760 Portuguese messages, an embedding-similarity router hit
-            <b>98.5%</b> accuracy (BERT: 99.0%) against 53.8% for zero-shot GPT, cutting cost by 96% (US$18.10 to US$0.32 per million requests) and memory from 6.5&nbsp;GB to 1.0&nbsp;GB.
-          </li>
-        </ul>
-        <p class="actions">
-          <a href="https://sol.sbc.org.br/index.php/sbsi/article/view/41348">Paper</a>
-          <a href="papers/2026-sbsi-text-message-routing.pdf">PDF</a>
+        <p class="step-ref">In progress</p>
+      </li>
+      <li class="next">
+        <p class="step-k">Step 4 · Longevity</p>
+        <h4>Apply the validated pipeline to long-lived people</h4>
+        <p>
+          Run the same pipeline on cohorts labeled by longevity, such as centenarians against controls, while controlling for ancestry,
+          and check its candidates against known longevity genes.
         </p>
-      </div>
-    </article>
+        <p class="step-ref">Next</p>
+      </li>
+    </ol>
+
+    <div class="questions">
+      <h3 class="sub">Questions I want to work on</h3>
+      <ul class="plain">
+        <li><strong>Small cohorts.</strong> How far can priors learned by sequence-to-function models stand in for the hundreds of thousands of genomes that disease studies use?</li>
+        <li><strong>Confounding.</strong> Our pigmentation testbed is the extreme case, where trait and ancestry are identical. How much of the method's advantage survives in real longevity cohorts, where the mismatch between cases and controls is milder but still there?</li>
+        <li><strong>Tissues and time.</strong> In which cell types, and at what point in life, does a longevity gene act? I'm getting practice with gene expression over time through the <a href="https://virtualembryo.ai/challenge">Virtual Embryo Challenge</a>, with my lab's team.</li>
+      </ul>
+    </div>
   </section>
 
   <!-- ===================== PUBLICATIONS ===================== -->
   <section id="publications" class="section wrap">
-    <h2 class="section-title"><span>03</span> Publications</h2>
+    <h2 class="section-title"><span>02</span> Publications</h2>
+
+    <h3 class="pub-group">Genomics</h3>
     <ol class="pubs">
+      <li>
+        <p class="pub-title">Phenotype-Associated Gene Discovery with AlphaGenome</p>
+        <p class="pub-authors"><b>B. U. de Angelo</b>, T. Oliveira-Santos, C. Badue, A. d'Avila Garcez, G. Guizzardi, A. F. De Souza</p>
+        <p class="pub-venue">Manuscript under review</p>
+      </li>
       <li>
         <p class="pub-title">Inferring Superpopulation Labels from DNA via AlphaGenome-Derived Functional Signals</p>
         <p class="pub-authors">A. F. Souza, T. Oliveira-Santos, C. Badue, <b>B. U. de Angelo</b>, D. Meira, A. Garcez, G. Guizzardi</p>
         <p class="pub-venue">ICANN 2026, Padua (LNCS) <span class="badge">Oral · presented by me</span></p>
       </li>
+    </ol>
+
+    <h3 class="pub-group">Robotics and language systems</h3>
+    <ol class="pubs">
       <li>
         <p class="pub-title">Text Message Routing System for Chat-Based Applications</p>
         <p class="pub-authors"><b>B. U. de Angelo</b>, G. G. Zanetti, A. F. Souza, C. Badue, A. G. Jacobsen, T. Oliveira-Santos</p>
@@ -208,73 +187,68 @@
     </ol>
   </section>
 
-  <!-- ===================== PROJECTS ===================== -->
-  <section id="projects" class="section wrap">
-    <h2 class="section-title"><span>04</span> Side projects &amp; coursework</h2>
-    <p class="section-intro">A selection from <a href="https://github.com/Breno-de-Angelo">GitHub</a>: personal projects, and course projects that went further than they had to.</p>
-    <h3 class="repo-cat">Audio &amp; embedded</h3>
-    <div class="repo-grid">
-      <a class="repo featured" href="https://github.com/Breno-de-Angelo/guitar_virtual_amp">
-        <span class="repo-lang">Rust · DSP · egui · Android</span>
-        <h4>Virtual guitar amp</h4>
-        <p>A real-time guitar effects processor: the signal runs through a configurable chain of 17 DSP pedals (distortion, compressor, wah, chorus, phaser, pitch shifter, looper…) and an impulse-response cabinet simulator, with 20 factory presets, a YIN-based tuner, a metronome and a live oscilloscope/FFT view. Runs on desktop and Android.</p>
-      </a>
-      <a class="repo" href="https://github.com/Breno-de-Angelo/embedded-drum-synth">
-        <span class="repo-lang">C · EFM32 bare metal</span>
-        <h4>Embedded drum machine</h4>
-        <p>Drum machine on an EFM32 Giant Gecko with hand-written drivers: WAV samples converted to C arrays, three-voice mixing, BPM control, and audio out via DAC, PWM or I²S.</p>
-      </a>
+  <!-- ===================== EARLIER WORK ===================== -->
+  <section id="earlier" class="section wrap">
+    <h2 class="section-title"><span>03</span> Earlier work</h2>
+    <p class="section-intro">Before genomics I spent four years building robots and language-model systems. That's where I learned to run experiments end to end, from collecting data to deploying on real hardware.</p>
+
+    <div class="card-grid">
+      <article class="card">
+        <figure class="slot" data-media="media/prometheus" data-label="The Unitree G1 running a learned ACT policy: it grasps a mug, lifts it and puts it back down (real time)"></figure>
+        <p class="tag">Humanoid robot learning · B.Sc. thesis 2025</p>
+        <h3>Prometheus: teaching a humanoid by VR teleoperation</h3>
+        <p>
+          Extended a Meta Quest&nbsp;3 teleoperation stack for a Unitree G1, collected demonstrations and trained RGB and depth-augmented
+          Action Chunking Transformer policies. I now supervise the undergraduates who continue the project.
+        </p>
+        <p class="actions">
+          <a href="papers/2025-tcc-depth-augmented-act-humanoid.pdf">Thesis (PDF)</a>
+          <a href="https://github.com/Breno-de-Angelo/refactored-prometheus">Code</a>
+        </p>
+      </article>
+
+      <article class="card">
+        <figure class="slot" data-media="media/hercules" data-youtube="1shBzEbdhWM" data-youtube-label="Watch the full mission" data-label="Hercules autonomously picks a bale from the pile and delivers it to the truck (sped up)"></figure>
+        <p class="tag">Mobile manipulation · LLMs · 2022 – 2024</p>
+        <h3>Hercules: an autonomous forklift you talk to</h3>
+        <p>
+          A team robot that moves cellulose bales onto a truck on spoken orders interpreted by an LLM. I built the arm motion, low-level control
+          and bale recognition. First-author paper in <em>JISEM</em>.
+        </p>
+        <p class="actions">
+          <a href="https://jisem-journal.com/index.php/journal/article/view/4610">Paper</a>
+          <a href="https://www.youtube.com/watch?v=1shBzEbdhWM">Video</a>
+        </p>
+      </article>
+
+      <article class="card">
+        <figure class="slot" data-media="media/argos-slam" data-label="Argos building a 3D lidar map of the building with SLAM, then a fly-around of the finished map"></figure>
+        <p class="tag">Legged robotics · 2024 – 2025</p>
+        <h3>Argos: a quadruped for hazardous inspections</h3>
+        <p>
+          Installed and tested open-source autonomy stacks on a Unitree Go1 meant for industrial monitoring. Here it builds a 3D lidar map of
+          our building.
+        </p>
+      </article>
+
+      <article class="card">
+        <figure class="slot" data-media="media/aumo" data-label="Presenting the message routing paper at SBSI 2026"></figure>
+        <p class="tag">AUMO S.A. · 2023 – present</p>
+        <h3>Enterprise LLM products</h3>
+        <p>
+          Backend development and infrastructure at a startup building retrieval-augmented chatbots. I led the research on a message router
+          that beats zero-shot GPT (98.5% vs 53.8% accuracy) at a fraction of the cost (SBSI 2026, first author).
+        </p>
+        <p class="actions">
+          <a href="https://sol.sbc.org.br/index.php/sbsi/article/view/41348">Paper</a>
+        </p>
+      </article>
     </div>
-    <h3 class="repo-cat">Robotics</h3>
-    <div class="repo-grid">
-      <a class="repo" href="https://github.com/Breno-de-Angelo/robos_autonomos_t1">
-        <span class="repo-lang">Python · ROS 2 · Nav2 · YOLO</span>
-        <h4>Autonomous explorer</h4>
-        <p>A simulated TurtleBot3 with 3D lidar explores an unknown world, choosing its next goals from the Nav2 costmap, and locates objects by combining a fine-tuned YOLO detector with lidar, estimating each object's width.</p>
-      </a>
-      <a class="repo" href="https://github.com/Breno-de-Angelo/robos_autonomos_t2">
-        <span class="repo-lang">Python · ROS 2 · Nav2</span>
-        <h4>Person-following robot</h4>
-        <p>A simulated robot explores until it detects a person, then stops exploring and navigates to them with Nav2.</p>
-      </a>
-      <a class="repo" href="https://github.com/Breno-de-Angelo/robotica_movel">
-        <span class="repo-lang">Python · ROS · Control</span>
-        <h4>Quadrotor flight control</h4>
-        <p>Inner/outer-loop (kinematic + dynamic) controller for a Parrot Bebop 2, tuned in simulation and then flown on the real drone for positioning, trajectory tracking and path following.</p>
-      </a>
-    </div>
-    <h3 class="repo-cat">Computer vision &amp; ML</h3>
-    <div class="repo-grid">
-      <a class="repo" href="https://github.com/Breno-de-Angelo/person_tracker">
-        <span class="repo-lang">Python · YOLOv8 · MQTT</span>
-        <h4>Occupancy-based power switching</h4>
-        <p>One hallway camera tracks people with YOLOv8 and counts them in and out of each door marked on the frame; over MQTT, each room's power is switched on when someone is inside and off when it empties.</p>
-      </a>
-      <a class="repo" href="https://github.com/Breno-de-Angelo/lesion-classifier-generalization">
-        <span class="repo-lang">Python · PyTorch</span>
-        <h4>Skin-lesion classifier generalization</h4>
-        <p>Trains EfficientNet on PAD-UFES-20 and on ISIC 2019+2020, then tests each on the other dataset to measure how well it transfers (balanced accuracy, ROC curves, W&amp;B tracking).</p>
-      </a>
-    </div>
-    <h3 class="repo-cat">Algorithms</h3>
-    <div class="repo-grid">
-      <a class="repo" href="https://github.com/Breno-de-Angelo/graph-theory">
-        <span class="repo-lang">Python · Algorithms</span>
-        <h4>Graph algorithms &amp; scalability</h4>
-        <p>Edge-disjoint paths via Menger's theorem and Dinic's max-flow in O(E√E), with generated graphs and empirical time and memory scaling fits.</p>
-      </a>
-      <a class="repo" href="https://github.com/Breno-de-Angelo/huffman-encoding">
-        <span class="repo-lang">C</span>
-        <h4>Huffman compressor</h4>
-        <p>File encoder and decoder in plain C, verified by a lossless round trip on the full text of the Bible.</p>
-      </a>
-    </div>
-    <p class="more">Also on GitHub: a ROS 2 diff-drive robot with EKF odometry and SLAM Toolbox, an Ackermann vehicle in Gazebo, numerical ODE solvers in Octave, 8086 assembly, C data structures, and my Sway <a href="https://github.com/Breno-de-Angelo/dotfiles">dotfiles</a>.</p>
   </section>
 
   <!-- ===================== ABOUT ===================== -->
   <section id="about" class="section wrap">
-    <h2 class="section-title"><span>05</span> About</h2>
+    <h2 class="section-title"><span>04</span> About</h2>
 
     <div class="about-grid">
       <div>
@@ -283,12 +257,12 @@
           <li>
             <span class="when">2026 – present</span>
             <p class="what">M.Sc. in Informatics, UFES</p>
-            <p class="detail">Advisor: Alberto F. De Souza. Neural models for genome analysis to find markers that promote human longevity. GPA 8.70/10 after the first semester.</p>
+            <p class="detail">Advisor: Alberto F. De Souza. Neural genome models for finding the genes behind human traits, aimed at longevity. GPA 8.70/10 after the first semester.</p>
           </li>
           <li>
             <span class="when">2021 – 2025</span>
             <p class="what">B.Sc. in Electrical Engineering, UFES</p>
-            <p class="detail">GPA 9.37/10; normalized GPA 16.84 on UFES's cohort-relative scale (mean 5.0, SD 1.25).</p>
+            <p class="detail">GPA 9.37/10. Thesis on depth-augmented imitation learning for humanoid manipulation.</p>
           </li>
           <li>
             <span class="when">2018 – 2021</span>
@@ -298,20 +272,20 @@
       </div>
 
       <div>
-        <h3 class="sub">Honors</h3>
-        <p>15 medals at Brazilian national olympiads (2018–2021), including gold in Mathematics (OBMEP, OMIF), Physics (OBF), Astronomy (OBA) and Sciences (ONC), and silver in Robotics (OBR).</p>
-
-        <h3 class="sub">Service, teaching &amp; mentoring</h3>
+        <h3 class="sub">Teaching &amp; mentoring</h3>
         <ul class="plain">
-          <li>Committee member for two undergraduate theses on LLM/SLM agents for business process automation and multi-agent enterprise database analysis.</li>
           <li>Supervising undergraduates on the Prometheus humanoid project.</li>
+          <li>Committee member for two undergraduate theses on LLM/SLM agents for business process automation and multi-agent enterprise database analysis.</li>
+          <li>PET Elétrica UFES (2022): created AutoCAD and Python mini-courses, and taught technology to older adults in the UnAPI project.</li>
           <li>Volunteer (2022–2024) in a UFES outreach project giving electrical and lab support to an institution for at-risk children and adolescents.</li>
-          <li>Member of PET Elétrica UFES (Tutorial Education Program, 2022): helped create AutoCAD and Python mini-courses for electrical engineering students, and taught technology topics to older adults in UnAPI, a project that teaches technology to the elderly.</li>
         </ul>
+
+        <h3 class="sub">Honors</h3>
+        <p>15 medals at Brazilian national science olympiads in high school (2018–2021).</p>
 
         <h3 class="sub">Toolbox</h3>
         <p class="chips">
-          <span>Python</span><span>PyTorch</span><span>ROS 2</span><span>C / C++</span><span>LLMs &amp; RAG</span><span>Computer vision</span><span>Docker</span><span>Kubernetes</span><span>Argo CD</span><span>Go</span><span>Rust</span>
+          <span>Python</span><span>PyTorch</span><span>AlphaGenome</span><span>plink2</span><span>scikit-learn / XGBoost</span><span>ROS 2</span><span>C / C++</span><span>Docker</span><span>Kubernetes</span>
         </p>
 
         <h3 class="sub">Languages</h3>
@@ -329,11 +303,11 @@
 
 <footer class="footer">
   <div class="wrap footer-inner">
-    <p>Let's talk about genomics, robots or LLMs: <a href="mailto:brenodeangelo@gmail.com">brenodeangelo@gmail.com</a></p>
+    <p>If you work on the genetics of aging, I'd love to talk: <a href="mailto:brenodeangelo@gmail.com">brenodeangelo@gmail.com</a></p>
     <p class="muted">© 2026 Breno Uliana de Angelo</p>
   </div>
 </footer>
 
-<script src="main.js?v=5"></script>
+<script src="main.js?v=6"></script>
 </body>
 </html>

@@ -1,6 +1,6 @@
 # Personal site
 
-Static site (no build step): `index.html`, `style.css`, `main.js`.
+Static site (no build step): `index.html` (research home), `projects.html` (side projects), `style.css`, `main.js`.
 
 ## Preview
 
@@ -17,11 +17,11 @@ Slots with no file show a dashed placeholder in local previews (localhost) and a
 | File name    | Where it appears                     |
 | ------------ | ------------------------------------ |
 | `profile`    | Hero portrait (4:5)                  |
-| `genomics`   | AlphaGenome project (ICANN talk, figure) |
-| `hercules`   | Hercules forklift                    |
-| `prometheus` | Prometheus humanoid / VR teleop      |
-| `argos`      | Argos quadruped                      |
-| `aumo`       | AUMO                                 |
+| `genomics`   | Research intro (ICANN talk, figure)  |
+| `prometheus` | Earlier work: Prometheus humanoid    |
+| `hercules`   | Earlier work: Hercules forklift      |
+| `argos-slam` | Earlier work: Argos quadruped (lidar map) |
+| `aumo`       | Earlier work: AUMO                   |
 | `gallery-1..2` | Gallery under About (4:3)         |
 
 All slots except the portrait are 16:10.

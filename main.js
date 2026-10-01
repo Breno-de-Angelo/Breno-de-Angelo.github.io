@@ -181,6 +181,7 @@ document.querySelector(".theme-toggle").addEventListener("click", () => {
 // shows one group at a time. Without JS, all groups stay visible.
 (function topicTabs() {
   const section = document.getElementById("projects");
+  if (!section) return;
   const heads = [...section.querySelectorAll(".repo-cat")];
   if (heads.length < 2) return;
   const bar = document.createElement("div");
