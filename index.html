@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Breno Uliana de Angelo</title>
+  <meta name="description" content="Breno Uliana de Angelo: M.Sc. student at UFES working on deep learning for genomics, robot learning and LLM systems.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="#top">B. U. de Angelo</a>
+    <nav>
+      <a href="#research">Research</a>
+      <a href="#industry">Industry</a>
+      <a href="#publications">Publications</a>
+      <a href="#projects">Projects</a>
+      <a href="#about">About</a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="Toggle dark mode">◐</button>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ===================== HERO ===================== -->
+  <section class="hero wrap">
+    <div class="hero-text">
+      <p class="eyebrow">M.Sc. student · UFES · Vitória, Brazil</p>
+      <h1>Breno Uliana de&nbsp;Angelo</h1>
+      <p class="lede">
+        I build learning systems that touch the physical and biological world:
+        neural models that read the genome, robots that learn from demonstration,
+        and LLM products that run in production.
+      </p>
+      <p class="lede-sub">
+        Graduate researcher at <a href="https://github.com/i2ca">I2CA</a> / <a href="https://github.com/LCAD-UFES">LCAD</a>
+        with Prof. Alberto F. De Souza, and first employee at <a href="https://github.com/aumoai">AUMO</a> since 2023.
+      </p>
+      <ul class="links">
+        <li><a href="mailto:brenodeangelo@gmail.com">Email</a></li>
+        <li><a href="https://github.com/Breno-de-Angelo">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/breno-uliana-de-angelo-2b32a3231/">LinkedIn</a></li>
+        <li><a href="https://orcid.org/0009-0007-9900-2477">ORCID</a></li>
+        <li><a href="http://lattes.cnpq.br/7851457880073528">Lattes</a></li>
+        <li><a href="papers/cv.pdf" class="cv-link">CV (PDF)</a></li>
+      </ul>
+    </div>
+    <figure class="slot portrait" data-media="media/profile" data-label="Portrait photo"></figure>
+  </section>
+
+  <section class="stats wrap" aria-label="At a glance">
+    <div><span class="num">3</span><span class="lbl">papers, 2 oral talks</span></div>
+    <div><span class="num">3</span><span class="lbl">robots: forklift, quadruped, humanoid</span></div>
+    <div><span class="num">9.37</span><span class="lbl">B.Sc. GPA (out of 10)</span></div>
+    <div><span class="num">15</span><span class="lbl">national olympiad medals</span></div>
+  </section>
+
+  <!-- ===================== RESEARCH ===================== -->
+  <section id="research" class="section wrap">
+    <h2 class="section-title"><span>01</span> Research</h2>
+
+    <article class="project">
+      <figure class="slot" data-media="media/genomics" data-label="Presenting the AlphaGenome paper at ICANN 2026 in Padua, title slide"></figure>
+      <div class="project-body">
+        <p class="tag">Deep learning for genomics · 2026 – present</p>
+        <h3>Reading phenotypes out of DNA with AlphaGenome</h3>
+        <p>
+          My M.Sc. asks how neural genome models can point to markers associated with human traits, with longevity as the long-term target.
+          We feed DNA through Google DeepMind's <em>AlphaGenome</em> and learn on top of its predicted functional signals.
+        </p>
+        <ul class="results">
+          <li>
+            <strong>Ancestry from 11 pigmentation genes (ICANN 2026, oral, presented by me).</strong>
+            Using predicted RNA-seq over 11 pigmentation genes for 2,237 individuals from the 1000 Genomes Project, a CNN classifies five superpopulations at
+            <b>84%</b> accuracy, versus 81% for XGBoost and 69% for Random Forest. I built both tree baselines and ran the hyperparameter search for every model.
+            A single known pigmentation gene (OCA2) reaches 64%; a random gene (FBXO5) gets 37%.
+          </li>
+          <li>
+            <strong>Gene prioritization (ongoing).</strong>
+            Using AlphaGenome to prioritize the genes associated with a phenotype of interest.
+          </li>
+          <li>
+            <strong>Virtual Embryo Challenge.</strong> Part of the LCAD team, with my advisor and lab colleagues. I helped frame the problem and design the models.
+          </li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="project">
+      <figure class="slot" data-media="media/hercules" data-youtube="1shBzEbdhWM" data-youtube-label="Watch the full mission" data-label="Hercules autonomously picks a bale from the pile and delivers it to the truck (sped up)"></figure>
+      <div class="project-body">
+        <p class="tag">Mobile manipulation · LLMs · 2022 – 2025</p>
+        <h3>Hercules, an autonomous forklift you talk to</h3>
+        <p>
+          A team effort at LCAD: an Ackermann robot with a manipulator arm that moves cellulose bales from a pile onto a truck in a scaled warehouse,
+          taking orders spoken in natural language and interpreted by an LLM.
+        </p>
+        <ul class="results">
+          <li>Programmed the arm motion and designed the low-level control system, then integrated it into the autonomy stack.</li>
+          <li>Designed the bale-recognition system: YOLOv8 fine-tuned on 859 images plus 3D localization from a depth camera, in ROS&nbsp;2.</li>
+          <li>Contributed to the chat-based command interface. In our benchmark GPT-4 approved <b>100%</b> of feasible tasks and rejected 83.3% of unfeasible ones; the best open model (Mixtral) managed 53.3% and 23.3%.</li>
+          <li>First-author paper in <em>JISEM</em> (2025).</li>
+        </ul>
+        <p class="actions">
+          <a href="https://jisem-journal.com/index.php/journal/article/view/4610">Paper</a>
+          <a href="papers/2025-jisem-hercules-forklift.pdf">PDF</a>
+          <a href="https://www.youtube.com/watch?v=1shBzEbdhWM">Video</a>
+        </p>
+      </div>
+    </article>
+
+    <article class="project">
+      <figure class="slot" data-media="media/prometheus" data-label="The Unitree G1 running a learned ACT policy autonomously: it grasps a mug, lifts it and puts it back down (real time)"></figure>
+      <div class="project-body">
+        <p class="tag">Humanoid robot learning · B.Sc. thesis 2025 · ongoing</p>
+        <h3>Prometheus, teaching a Unitree G1 humanoid by VR teleoperation</h3>
+        <p>
+          My undergraduate thesis evaluated whether adding depth helps an Action Chunking Transformer (ACT) policy manipulate objects with a humanoid.
+        </p>
+        <ul class="results">
+          <li>Extended an open-source Meta Quest&nbsp;3 teleoperation stack with a new <em>Pinch Retargeting</em> hand-control strategy and stereoscopic feedback.</li>
+          <li>Collected pick-and-place demonstrations and curated the 30 best (rated on a 5-point scale) into a LeRobot dataset.</li>
+          <li>Trained RGB-only and depth-augmented (PointNet encoder) ACT policies.</li>
+          <li>Now supervising undergraduates who continue the project: benchmarking vision-language-action (VLA) models, collecting new data, and writing a hierarchical program for the robot to make a cup of coffee on its own.</li>
+        </ul>
+        <p class="actions">
+          <a href="papers/2025-tcc-depth-augmented-act-humanoid.pdf">Thesis (PDF)</a>
+          <a href="https://github.com/Breno-de-Angelo/refactored-prometheus">Code</a>
+        </p>
+      </div>
+    </article>
+
+    <div class="mini-grid">
+      <article class="mini">
+        <figure class="slot" data-media="media/argos" data-label="Argos (Unitree Go1) photo"></figure>
+        <p class="tag">Quadruped</p>
+        <h4>Argos, Unitree Go1</h4>
+        <p>Installed and tested open-source autonomy stacks on the lab's quadruped.</p>
+      </article>
+      <article class="mini">
+        <figure class="slot" data-media="media/autonomy" data-label="The lab's robot car with its sensor box"></figure>
+        <p class="tag">Autonomous vehicles &amp; robots</p>
+        <h4>Autonomous Computational Intelligence</h4>
+        <p>Undergraduate research fellow (2022–2025) on localization, mapping, perception and navigation for autonomous vehicles and robots.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- ===================== INDUSTRY ===================== -->
+  <section id="industry" class="section wrap">
+    <h2 class="section-title"><span>02</span> Industry</h2>
+
+    <article class="project">
+      <figure class="slot" data-media="media/aumo" data-label="Presenting the message routing paper at SBSI 2026"></figure>
+      <div class="project-body">
+        <p class="tag">AUMO S.A. · First employee · 2023 – present</p>
+        <h3>Backend, DevOps and project management for enterprise LLM products</h3>
+        <p>
+          AUMO is a startup born in the UFES incubator. It sells SaaS and on-premise chatbots grounded in company knowledge through retrieval-augmented generation,
+          with connectors to Google Drive, OneDrive, Jira and others, Model Context Protocol (MCP) integrations, and custom small language models trained per contract.
+          As its first employee I've owned the Python backend, the infrastructure and the project management.
+        </p>
+        <ul class="results">
+          <li>
+            <strong>Semantic routing (SBSI 2026, oral, first author).</strong> I led the research on a layer that sorts incoming chat messages
+            into relevant, unrelated, chitchat or spam before anything reaches the LLM. On a balanced set of 6,760 Portuguese messages, an embedding-similarity router hit
+            <b>98.5%</b> accuracy (BERT: 99.0%) against 53.8% for zero-shot GPT, cutting cost by 96% (US$18.10 to US$0.32 per million requests) and memory from 6.5&nbsp;GB to 1.0&nbsp;GB.
+          </li>
+        </ul>
+        <p class="actions">
+          <a href="https://sol.sbc.org.br/index.php/sbsi/article/view/41348">Paper</a>
+          <a href="papers/2026-sbsi-text-message-routing.pdf">PDF</a>
+        </p>
+      </div>
+    </article>
+  </section>
+
+  <!-- ===================== PUBLICATIONS ===================== -->
+  <section id="publications" class="section wrap">
+    <h2 class="section-title"><span>03</span> Publications</h2>
+    <ol class="pubs">
+      <li>
+        <p class="pub-title">Inferring Superpopulation Labels from DNA via AlphaGenome-Derived Functional Signals</p>
+        <p class="pub-authors">A. F. Souza, T. Oliveira-Santos, C. Badue, <b>B. U. de Angelo</b>, D. Meira, A. Garcez, G. Guizzardi</p>
+        <p class="pub-venue">ICANN 2026, Padua (LNCS) <span class="badge">Oral · presented by me</span></p>
+      </li>
+      <li>
+        <p class="pub-title">Text Message Routing System for Chat-Based Applications</p>
+        <p class="pub-authors"><b>B. U. de Angelo</b>, G. G. Zanetti, A. F. Souza, C. Badue, A. G. Jacobsen, T. Oliveira-Santos</p>
+        <p class="pub-venue">SBSI 2026, pp. 674–692 <span class="badge">Oral · presented by me</span></p>
+        <p class="pub-links"><a href="https://sol.sbc.org.br/index.php/sbsi/article/view/41348">SOL</a> <a href="papers/2026-sbsi-text-message-routing.pdf">PDF</a></p>
+      </li>
+      <li>
+        <p class="pub-title">An Interactive Autonomous Forklift Robot Based on Large Language Models</p>
+        <p class="pub-authors"><b>B. U. de Angelo</b>, A. G. C. Pacheco, R. F. Freitas, I. J. O. Silva, E. P. De Abreu, L. F. S. C. Cardoso, T. Oliveira-Santos, C. Badue, A. F. De Souza</p>
+        <p class="pub-venue">Journal of Information Systems Engineering and Management, 10:946–961, 2025</p>
+        <p class="pub-links"><a href="https://jisem-journal.com/index.php/journal/article/view/4610">Journal</a> <a href="papers/2025-jisem-hercules-forklift.pdf">PDF</a></p>
+      </li>
+    </ol>
+  </section>
+
+  <!-- ===================== PROJECTS ===================== -->
+  <section id="projects" class="section wrap">
+    <h2 class="section-title"><span>04</span> Side projects &amp; coursework</h2>
+    <p class="section-intro">A selection from <a href="https://github.com/Breno-de-Angelo">GitHub</a>, mostly course projects that went further than they had to.</p>
+    <div class="repo-grid">
+      <a class="repo" href="https://github.com/Breno-de-Angelo/robos_autonomos_t1">
+        <span class="repo-lang">Python · ROS 2 · Nav2 · YOLO</span>
+        <h4>Autonomous explorer</h4>
+        <p>A simulated TurtleBot3 with 3D lidar explores an unknown world, choosing its next goals from the Nav2 costmap, and locates objects by combining a fine-tuned YOLO detector with lidar, estimating each object's width.</p>
+      </a>
+      <a class="repo" href="https://github.com/Breno-de-Angelo/robotica_movel">
+        <span class="repo-lang">Python · ROS · Control</span>
+        <h4>Quadrotor flight control</h4>
+        <p>Inner/outer-loop (kinematic + dynamic) controller for a Parrot Bebop 2, tuned in simulation and then flown on the real drone for positioning, trajectory tracking and path following.</p>
+      </a>
+      <a class="repo" href="https://github.com/Breno-de-Angelo/person_tracker">
+        <span class="repo-lang">Python · YOLOv8 · MQTT</span>
+        <h4>Occupancy-based power switching</h4>
+        <p>One hallway camera tracks people with YOLOv8 and counts them in and out of each door marked on the frame; over MQTT, each room's power is switched on when someone is inside and off when it empties.</p>
+      </a>
+      <a class="repo" href="https://github.com/Breno-de-Angelo/robos_autonomos_t2">
+        <span class="repo-lang">Python · ROS 2 · Nav2</span>
+        <h4>Person-following robot</h4>
+        <p>A simulated robot explores until it detects a person, then stops exploring and navigates to them with Nav2.</p>
+      </a>
+      <a class="repo" href="https://github.com/Breno-de-Angelo/lesion-classifier-generalization">
+        <span class="repo-lang">Python · PyTorch</span>
+        <h4>Skin-lesion classifier generalization</h4>
+        <p>Trains EfficientNet on PAD-UFES-20 and on ISIC 2019+2020, then tests each on the other dataset to measure how well it transfers (balanced accuracy, ROC curves, W&amp;B tracking).</p>
+      </a>
+      <a class="repo" href="https://github.com/Breno-de-Angelo/embedded-drum-synth">
+        <span class="repo-lang">C · EFM32 bare metal</span>
+        <h4>Embedded drum machine</h4>
+        <p>Drum machine on an EFM32 Giant Gecko with hand-written drivers: WAV samples converted to C arrays, three-voice mixing, BPM control, and audio out via DAC, PWM or I²S.</p>
+      </a>
+      <a class="repo" href="https://github.com/Breno-de-Angelo/graph-theory">
+        <span class="repo-lang">Python · Algorithms</span>
+        <h4>Graph algorithms &amp; scalability</h4>
+        <p>Edge-disjoint paths via Menger's theorem and Dinic's max-flow in O(E√E), with generated graphs and empirical time and memory scaling fits.</p>
+      </a>
+      <a class="repo" href="https://github.com/Breno-de-Angelo/huffman-encoding">
+        <span class="repo-lang">C</span>
+        <h4>Huffman compressor</h4>
+        <p>File encoder and decoder in plain C, verified by a lossless round trip on the full text of the Bible.</p>
+      </a>
+    </div>
+    <p class="more">Also on GitHub: a ROS 2 diff-drive robot with EKF odometry and SLAM Toolbox, an Ackermann vehicle in Gazebo, numerical ODE solvers in Octave, 8086 assembly, C data structures, and my Sway <a href="https://github.com/Breno-de-Angelo/dotfiles">dotfiles</a>.</p>
+  </section>
+
+  <!-- ===================== ABOUT ===================== -->
+  <section id="about" class="section wrap">
+    <h2 class="section-title"><span>05</span> About</h2>
+
+    <div class="about-grid">
+      <div>
+        <h3 class="sub">Education</h3>
+        <ul class="timeline">
+          <li>
+            <span class="when">2026 – present</span>
+            <p class="what">M.Sc. in Informatics, UFES</p>
+            <p class="detail">Advisor: Alberto F. De Souza. Neural models for genome analysis to find markers that promote human longevity. GPA 8.70/10 after the first semester.</p>
+          </li>
+          <li>
+            <span class="when">2021 – 2025</span>
+            <p class="what">B.Sc. in Electrical Engineering, UFES</p>
+            <p class="detail">GPA 9.37/10; normalized GPA 16.84 on UFES's cohort-relative scale (mean 5.0, SD 1.25).</p>
+          </li>
+          <li>
+            <span class="when">2018 – 2021</span>
+            <p class="what">Technical Diploma in Electrotechnics, IFES</p>
+          </li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="sub">Honors</h3>
+        <p>15 medals at Brazilian national olympiads (2018–2021), including gold in Mathematics (OBMEP, OMIF), Physics (OBF), Astronomy (OBA) and Sciences (ONC), and silver in Robotics (OBR).</p>
+
+        <h3 class="sub">Service, teaching &amp; mentoring</h3>
+        <ul class="plain">
+          <li>Committee member for two undergraduate theses on LLM/SLM agents for business process automation and multi-agent enterprise database analysis.</li>
+          <li>Supervising undergraduates on the Prometheus humanoid project.</li>
+          <li>Volunteer (2022–2024) in a UFES outreach project giving electrical and lab support to an institution for at-risk children and adolescents.</li>
+          <li>Member of PET Elétrica UFES (Tutorial Education Program): helped create AutoCAD and Python mini-courses for electrical engineering students, and taught technology topics to older adults in UnAPI, a project that teaches technology to the elderly.</li>
+        </ul>
+
+        <h3 class="sub">Toolbox</h3>
+        <p class="chips">
+          <span>Python</span><span>PyTorch</span><span>ROS 2</span><span>C / C++</span><span>LLMs &amp; RAG</span><span>Computer vision</span><span>Docker</span><span>Kubernetes</span><span>Argo CD</span><span>Go</span><span>Rust</span>
+        </p>
+
+        <h3 class="sub">Languages</h3>
+        <p>Portuguese (native), English (fluent), Spanish (good reading and listening).</p>
+      </div>
+    </div>
+
+    <div class="gallery" aria-label="Gallery">
+      <figure class="slot" data-media="media/gallery-1" data-label="Talk at SBSI 2026"></figure>
+      <figure class="slot" data-media="media/gallery-2" data-label="The robot car out for its first street data log, at night"></figure>
+      <figure class="slot" data-media="media/gallery-3" data-label="VR teleoperation: the Unitree G1 mirrors the operator's arms"></figure>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap footer-inner">
+    <p>Let's talk about genomics, robots or LLMs: <a href="mailto:brenodeangelo@gmail.com">brenodeangelo@gmail.com</a></p>
+    <p class="muted">© 2026 Breno Uliana de Angelo</p>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>
