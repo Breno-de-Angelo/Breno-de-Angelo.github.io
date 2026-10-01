@@ -22,7 +22,7 @@ Slots with no file show a dashed placeholder in local previews (localhost) and a
 | `prometheus` | Prometheus humanoid / VR teleop      |
 | `argos`      | Argos quadruped                      |
 | `aumo`       | AUMO                                 |
-| `gallery-1..3` | Square gallery under About         |
+| `gallery-1..2` | Gallery under About (4:3)         |
 
 All slots except the portrait are 16:10.
 

@@ -23,6 +23,74 @@ function imageLoads(url) {
   });
 }
 
+const REDUCED_MOTION = matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+// Play/pause button plus a seekable progress bar. `toggle` loads and
+// plays/pauses the video; returns { sync } to refresh the button state.
+function addVideoControls(slot, v, toggle) {
+  const btn = document.createElement("button");
+  btn.type = "button";
+  btn.className = "vc-toggle";
+  const bar = document.createElement("div");
+  bar.className = "vc-bar";
+  bar.setAttribute("role", "slider");
+  bar.setAttribute("aria-label", "Video position");
+  bar.tabIndex = 0;
+  const fill = document.createElement("div");
+  fill.className = "vc-fill";
+  bar.appendChild(fill);
+  slot.append(btn, bar);
+
+  const sync = () => {
+    const playing = !v.paused;
+    btn.textContent = playing ? "❚❚" : "▶";
+    btn.setAttribute("aria-label", playing ? "Pause video" : "Play video");
+    slot.classList.toggle("is-paused", !playing);
+  };
+  let raf = 0;
+  const tick = () => {
+    if (v.duration) {
+      const p = v.currentTime / v.duration;
+      fill.style.transform = `scaleX(${p})`;
+      bar.setAttribute("aria-valuenow", Math.round(p * 100));
+    }
+    raf = v.paused ? 0 : requestAnimationFrame(tick);
+  };
+  v.addEventListener("play", () => { sync(); if (!raf) raf = requestAnimationFrame(tick); });
+  v.addEventListener("pause", () => { sync(); tick(); });
+  v.addEventListener("seeked", tick);
+
+  btn.addEventListener("click", toggle);
+  v.addEventListener("click", toggle);
+
+  const seekTo = async p => {
+    if (!v.duration) {
+      if (!v.currentSrc) toggle();
+      await new Promise(r => v.addEventListener("loadedmetadata", r, { once: true }));
+    }
+    v.currentTime = Math.min(Math.max(p, 0), 0.999) * v.duration;
+  };
+  const fromEvent = e => {
+    const r = bar.getBoundingClientRect();
+    return (e.clientX - r.left) / r.width;
+  };
+  bar.addEventListener("pointerdown", e => {
+    bar.setPointerCapture(e.pointerId);
+    seekTo(fromEvent(e));
+    const move = ev => seekTo(fromEvent(ev));
+    bar.addEventListener("pointermove", move);
+    bar.addEventListener("pointerup", () => bar.removeEventListener("pointermove", move), { once: true });
+  });
+  bar.addEventListener("keydown", e => {
+    if (!v.duration) return;
+    const step = { ArrowLeft: -1, ArrowRight: 1 }[e.key];
+    if (step) { e.preventDefault(); v.currentTime = Math.max(0, v.currentTime + step); }
+  });
+
+  sync();
+  return { sync };
+}
+
 async function fillSlot(slot) {
   const base = slot.dataset.media;
   const alt = slot.dataset.label || "";
@@ -33,14 +101,23 @@ async function fillSlot(slot) {
       v.setAttribute("aria-label", alt);
       if (await exists(`${base}-poster.jpg`)) v.poster = `${base}-poster.jpg`;
       slot.appendChild(v);
+      const src = `${base}.${ext}`;
+      // Autoplay unless the visitor paused it or prefers reduced motion.
+      let userPaused = REDUCED_MOTION;
+      const ui = addVideoControls(slot, v, () => {
+        if (!v.src) v.src = src;
+        userPaused = !v.paused;
+        userPaused ? v.pause() : v.play().catch(() => {});
+      });
       // Only fetch and play while on screen.
       new IntersectionObserver(([e]) => {
         if (e.isIntersecting) {
-          if (!v.src) v.src = `${base}.${ext}`;
-          v.play().catch(() => {});
+          if (!v.src && !userPaused) v.src = src;
+          if (!userPaused) v.play().catch(() => {});
         } else {
           v.pause();
         }
+        ui.sync();
       }, { rootMargin: "200px" }).observe(slot);
       return;
     }
