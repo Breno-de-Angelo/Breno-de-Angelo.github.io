@@ -21,7 +21,6 @@ Slots with no file show a dashed placeholder in local previews (localhost) and a
 | `hercules`   | Hercules forklift                    |
 | `prometheus` | Prometheus humanoid / VR teleop      |
 | `argos`      | Argos quadruped                      |
-| `autonomy`   | Autonomous vehicles / lab            |
 | `aumo`       | AUMO                                 |
 | `gallery-1..3` | Square gallery under About         |
 
