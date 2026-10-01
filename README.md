@@ -30,3 +30,5 @@ All slots except the portrait are 16:10.
 
 Push this folder to a repo named `Breno-de-Angelo.github.io` and GitHub Pages serves it at
 https://breno-de-angelo.github.io.
+
+When `style.css` or `main.js` change, bump the `?v=` number on their links in `index.html` so returning visitors don't get a cached old copy.
