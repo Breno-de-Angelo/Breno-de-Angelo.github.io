@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=6">
+  <link rel="stylesheet" href="style.css?v=7">
 </head>
 <body>
 
@@ -99,6 +99,31 @@
       </ol>
       <figcaption>The method. Solid steps are built and tested; dashed steps are in progress.</figcaption>
     </figure>
+
+    <div class="tool">
+      <div class="tool-text">
+        <div>
+          <p class="step-k">Software</p>
+          <h3>One app for the whole pipeline</h3>
+          <p>
+            I built <code>genomics visualize</code>, a local web app that runs every step above on a cohort: import a VCF,
+            run each individual through AlphaGenome, compare the predicted functional tracks across groups, train classifiers,
+            and edit a person's DNA in silico to see how the prediction changes.
+          </p>
+          <p class="actions">
+            <a href="https://github.com/albertodesouza/genomics">Code</a>
+            <a href="https://github.com/albertodesouza/genomics/blob/main/docs/components/visualizer.md">Docs</a>
+          </p>
+        </div>
+        <ul class="plain">
+          <li><strong>Cohort.</strong> Faceted sample builder over 1000 Genomes (3,202 genomes).</li>
+          <li><strong>Tracks.</strong> Per-individual, group-mean and population-heatmap views, with observed ENCODE / FANTOM5 data alongside.</li>
+          <li><strong>Experiments.</strong> Training jobs, metrics and run comparison.</li>
+          <li><strong>Perturbation Lab.</strong> Edit haplotypes, re-predict and re-score them with a trained model.</li>
+        </ul>
+      </div>
+      <figure class="slot" data-media="media/visualizer" data-label="genomics visualize: cohort builder, AlphaGenome tracks with group means and observed data, haplotype sequences and experiment runs (1000 Genomes, TYRP1)"></figure>
+    </div>
 
     <h3 class="sub roadmap-title">Roadmap</h3>
     <ol class="roadmap">

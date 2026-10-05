@@ -18,6 +18,7 @@ Slots with no file show a dashed placeholder in local previews (localhost) and a
 | ------------ | ------------------------------------ |
 | `profile`    | Hero portrait (4:5)                  |
 | `genomics`   | Research intro (ICANN talk, figure)  |
+| `visualizer` | Research: genomics visualizer demo   |
 | `prometheus` | Earlier work: Prometheus humanoid    |
 | `hercules`   | Earlier work: Hercules forklift      |
 | `argos-slam` | Earlier work: Argos quadruped (lidar map) |

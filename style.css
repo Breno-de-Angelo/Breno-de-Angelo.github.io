@@ -132,6 +132,18 @@ h4 { font-weight: 600; font-size: 1rem; margin: 4px 0 6px; }
   .pipeline li + li::before { content: "↓"; left: 50%; top: -20px; transform: translateX(-50%); }
 }
 
+.tool { margin-top: 56px; }
+.tool-text {
+  display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); gap: 48px; align-items: end;
+  margin-bottom: 24px;
+}
+.tool-text h3 { margin-top: 0; }
+.tool-text p:not(.step-k):not(.actions), .tool-text .plain { color: var(--ink-2); margin: 0 0 14px; max-width: 40em; }
+.tool-text .plain { font-size: .93rem; margin: 0; }
+.tool-text strong { color: var(--ink); font-weight: 600; }
+.tool-text code { font: .88em var(--mono); color: var(--ink); }
+@media (max-width: 900px) { .tool-text { grid-template-columns: 1fr; gap: 16px; } }
+
 .roadmap-title { margin: 56px 0 16px !important; }
 .roadmap {
   list-style: none; margin: 0; padding: 0;
